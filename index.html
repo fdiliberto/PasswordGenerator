@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Karla:ital,wght@0,800;1,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="container">
+      <div id="title">
+        <h1>
+          <span>Generate a</span>
+          <span class="text-green">random password</span>
+        </h1>
+      </div>
+      <div id="body" class="font-inter">
+        <p>Never use an insecure password again.</p>
+        <fieldset>
+          <legend>Password type:</legend>
+          <div>
+            <input
+              type="radio"
+              id="mixed"
+              name="password-type"
+              value="mixed"
+              checked
+            />
+            <label for="mixed"
+              >Mixed (letters, numbers, special characters)</label
+            >
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="letters"
+              name="password-type"
+              value="letters"
+            />
+            <label for="letters">Only letters</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="numbers"
+              name="password-type"
+              value="numbers"
+            />
+            <label for="numbers">Only numbers</label>
+          </div>
+        </fieldset>
+        <button class="font-inter" onclick="generatePassword()">
+          Generate passwords
+        </button>
+        <div id="password-container">
+          <div class="password-box">
+            <span id="pwd-value-first"></span>
+            <span
+              class="copy-to-clipboard"
+              title="Copy to Clipboard"
+              onclick="copyToClipboard('pwd-value-first')"
+              >📑</span
+            >
+          </div>
+          <div class="password-box">
+            <span id="pwd-value-second"></span>
+            <span
+              class="copy-to-clipboard"
+              title="Copy to Clipboard"
+              onclick="copyToClipboard('pwd-value-second')"
+              >📑</span
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/characters.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
